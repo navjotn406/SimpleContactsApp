@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		E523A3A42937F7BA00338BAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E523A3A32937F7BA00338BAF /* AppDelegate.swift */; };
 		E523A3A62937F7BA00338BAF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E523A3A52937F7BA00338BAF /* SceneDelegate.swift */; };
-		E523A3A82937F7BA00338BAF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E523A3A72937F7BA00338BAF /* ViewController.swift */; };
+		E523A3A82937F7BA00338BAF /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E523A3A72937F7BA00338BAF /* ContactsViewController.swift */; };
 		E523A3AB2937F7BA00338BAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E523A3A92937F7BA00338BAF /* Main.storyboard */; };
 		E523A3AE2937F7BA00338BAF /* SimpleContactsApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E523A3AC2937F7BA00338BAF /* SimpleContactsApp.xcdatamodeld */; };
 		E523A3B02937F7BA00338BAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E523A3AF2937F7BA00338BAF /* Assets.xcassets */; };
@@ -17,6 +17,8 @@
 		E523A3BE2937F7BA00338BAF /* SimpleContactsAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E523A3BD2937F7BA00338BAF /* SimpleContactsAppTests.swift */; };
 		E523A3C82937F7BA00338BAF /* SimpleContactsAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E523A3C72937F7BA00338BAF /* SimpleContactsAppUITests.swift */; };
 		E523A3CA2937F7BA00338BAF /* SimpleContactsAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E523A3C92937F7BA00338BAF /* SimpleContactsAppUITestsLaunchTests.swift */; };
+		E574CB6B2938EB49005A80B1 /* ContactsCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E574CB6A2938EB49005A80B1 /* ContactsCustomCell.swift */; };
+		E574CB6D29393E05005A80B1 /* AddContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E574CB6C29393E05005A80B1 /* AddContactViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +42,7 @@
 		E523A3A02937F7BA00338BAF /* SimpleContactsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleContactsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E523A3A32937F7BA00338BAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E523A3A52937F7BA00338BAF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E523A3A72937F7BA00338BAF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E523A3A72937F7BA00338BAF /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		E523A3AA2937F7BA00338BAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E523A3AD2937F7BA00338BAF /* SimpleContactsApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SimpleContactsApp.xcdatamodel; sourceTree = "<group>"; };
 		E523A3AF2937F7BA00338BAF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +53,8 @@
 		E523A3C32937F7BA00338BAF /* SimpleContactsAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleContactsAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E523A3C72937F7BA00338BAF /* SimpleContactsAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleContactsAppUITests.swift; sourceTree = "<group>"; };
 		E523A3C92937F7BA00338BAF /* SimpleContactsAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleContactsAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E574CB6A2938EB49005A80B1 /* ContactsCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsCustomCell.swift; sourceTree = "<group>"; };
+		E574CB6C29393E05005A80B1 /* AddContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +107,9 @@
 			children = (
 				E523A3A32937F7BA00338BAF /* AppDelegate.swift */,
 				E523A3A52937F7BA00338BAF /* SceneDelegate.swift */,
-				E523A3A72937F7BA00338BAF /* ViewController.swift */,
+				E523A3A72937F7BA00338BAF /* ContactsViewController.swift */,
+				E574CB6C29393E05005A80B1 /* AddContactViewController.swift */,
+				E574CB6A2938EB49005A80B1 /* ContactsCustomCell.swift */,
 				E523A3A92937F7BA00338BAF /* Main.storyboard */,
 				E523A3AF2937F7BA00338BAF /* Assets.xcassets */,
 				E523A3B12937F7BA00338BAF /* LaunchScreen.storyboard */,
@@ -262,8 +268,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E523A3AE2937F7BA00338BAF /* SimpleContactsApp.xcdatamodeld in Sources */,
-				E523A3A82937F7BA00338BAF /* ViewController.swift in Sources */,
+				E523A3A82937F7BA00338BAF /* ContactsViewController.swift in Sources */,
 				E523A3A42937F7BA00338BAF /* AppDelegate.swift in Sources */,
+				E574CB6D29393E05005A80B1 /* AddContactViewController.swift in Sources */,
+				E574CB6B2938EB49005A80B1 /* ContactsCustomCell.swift in Sources */,
 				E523A3A62937F7BA00338BAF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

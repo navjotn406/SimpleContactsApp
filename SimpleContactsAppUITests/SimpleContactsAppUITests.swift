@@ -1,10 +1,3 @@
-//
-//  SimpleContactsAppUITests.swift
-//  SimpleContactsAppUITests
-//
-//  Created by Kinza Saghir on 01/12/2022.
-//
-
 import XCTest
 
 class SimpleContactsAppUITests: XCTestCase {
