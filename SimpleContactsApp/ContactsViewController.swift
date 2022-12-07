@@ -1,15 +1,18 @@
 import UIKit
 import CoreData
 
-class ContactsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ContactsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
+    let managedContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var contactsArray: [NSManagedObject] = []
+    var filteredContactsArray: [NSManagedObject] = [] // For displaying search results
+    var isInSearchMode = false
     let cellReuseIdentifier = "cell"
         
     @IBOutlet var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var addContactButton: UIButton!
-    
+    @IBOutlet weak var containerView: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,27 +20,35 @@ class ContactsViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.delegate = self
         tableView.dataSource = self
         searchBar.backgroundImage = UIImage()
+        searchBar.delegate = self
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        containerView.addGestureRecognizer(tap) // to hide keypad and cancel searching.
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         refreshData()
-        
     }
+    
+    @objc func dismissKeyboard() {
+        searchBar.text = ""
+        isInSearchMode = false
+        view.endEditing(true)
+        tableView.reloadData()
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "addContact" {
                 if let viewController = segue.destination as? AddContactsViewController {
-                    viewController.ref = self
+                    viewController.contactViewControllerRef = self
+                    viewController.editContact = false
                     }
             }
     }
     
     func refreshData() {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-            return
-        }
-        let managedContext = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Contact")
         
         do {
@@ -55,13 +66,19 @@ class ContactsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.contactsArray.count
+        if isInSearchMode {          // if user has searched then only show search results. otherwise show all
+            return filteredContactsArray.count
+        }
+        return contactsArray.count
     }
         
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             
         let cell:ContactsCustomCell = self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as! ContactsCustomCell
-        let contact = contactsArray[indexPath.row]
+        var contact = contactsArray[indexPath.row]
+        if isInSearchMode {
+            contact = filteredContactsArray[indexPath.row]
+        }
         
         let firstName = contact.value(forKeyPath: "firstName") as! String
         let lastName = contact.value(forKeyPath: "lastName") as! String
@@ -71,13 +88,36 @@ class ContactsViewController: UIViewController, UITableViewDelegate, UITableView
     }
         
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("You tapped cell number \(indexPath.row).")
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let contactDetailsViewController = storyBoard.instantiateViewController(withIdentifier: "ContactDetailsViewController") as! ContactDetailsViewController
+        
+        let contact = contactsArray[indexPath.row]
+        contactDetailsViewController.contactViewControllerRef = self
+        contactDetailsViewController.contact = contact
+        
+        self.navigationController?.pushViewController(contactDetailsViewController, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
     }
-
-
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+      isInSearchMode = true        // searching has started. 
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        filteredContactsArray = []       // find all the contacts having searhing query.
+        for contact in contactsArray {
+            let searchQuery = searchBar.text ?? ""
+            let firstName = contact.value(forKeyPath: "firstName") as! String
+            let lastName = contact.value(forKeyPath: "lastName") as! String
+            
+            if(firstName.contains(searchQuery) || (lastName.contains(searchQuery))) {
+                filteredContactsArray.append(contact)
+            }
+        }
+        tableView.reloadData()
+    }
 }
 
