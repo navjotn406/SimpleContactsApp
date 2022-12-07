@@ -17,6 +17,7 @@
 		E523A3BE2937F7BA00338BAF /* SimpleContactsAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E523A3BD2937F7BA00338BAF /* SimpleContactsAppTests.swift */; };
 		E523A3C82937F7BA00338BAF /* SimpleContactsAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E523A3C72937F7BA00338BAF /* SimpleContactsAppUITests.swift */; };
 		E523A3CA2937F7BA00338BAF /* SimpleContactsAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E523A3C92937F7BA00338BAF /* SimpleContactsAppUITestsLaunchTests.swift */; };
+		E5369E3C293BCE260022D54A /* ContactDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5369E3B293BCE260022D54A /* ContactDetailsViewController.swift */; };
 		E574CB6B2938EB49005A80B1 /* ContactsCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E574CB6A2938EB49005A80B1 /* ContactsCustomCell.swift */; };
 		E574CB6D29393E05005A80B1 /* AddContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E574CB6C29393E05005A80B1 /* AddContactViewController.swift */; };
 /* End PBXBuildFile section */
@@ -53,6 +54,7 @@
 		E523A3C32937F7BA00338BAF /* SimpleContactsAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleContactsAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E523A3C72937F7BA00338BAF /* SimpleContactsAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleContactsAppUITests.swift; sourceTree = "<group>"; };
 		E523A3C92937F7BA00338BAF /* SimpleContactsAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleContactsAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E5369E3B293BCE260022D54A /* ContactDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsViewController.swift; sourceTree = "<group>"; };
 		E574CB6A2938EB49005A80B1 /* ContactsCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsCustomCell.swift; sourceTree = "<group>"; };
 		E574CB6C29393E05005A80B1 /* AddContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -110,6 +112,7 @@
 				E523A3A72937F7BA00338BAF /* ContactsViewController.swift */,
 				E574CB6C29393E05005A80B1 /* AddContactViewController.swift */,
 				E574CB6A2938EB49005A80B1 /* ContactsCustomCell.swift */,
+				E5369E3B293BCE260022D54A /* ContactDetailsViewController.swift */,
 				E523A3A92937F7BA00338BAF /* Main.storyboard */,
 				E523A3AF2937F7BA00338BAF /* Assets.xcassets */,
 				E523A3B12937F7BA00338BAF /* LaunchScreen.storyboard */,
@@ -268,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E523A3AE2937F7BA00338BAF /* SimpleContactsApp.xcdatamodeld in Sources */,
+				E5369E3C293BCE260022D54A /* ContactDetailsViewController.swift in Sources */,
 				E523A3A82937F7BA00338BAF /* ContactsViewController.swift in Sources */,
 				E523A3A42937F7BA00338BAF /* AppDelegate.swift in Sources */,
 				E574CB6D29393E05005A80B1 /* AddContactViewController.swift in Sources */,

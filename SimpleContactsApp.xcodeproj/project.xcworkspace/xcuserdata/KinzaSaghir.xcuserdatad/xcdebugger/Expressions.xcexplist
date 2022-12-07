@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "AddContactsViewController.saveContact(firstName:lastName:phone:):AddContactViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "contacct">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ContactsViewController.refreshData():ContactsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "tableView">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ContactsViewController.tableView(_:cellForRowAt:):ContactsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "contact.value(forKeyPath: &quot;firstName&quot;)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
